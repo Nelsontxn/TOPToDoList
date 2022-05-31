@@ -18,3 +18,43 @@ body{
     text-align: center;
 }
 
+.HamburgerMenu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.HamburgerMenuIcon{
+    min-width: 25px;
+    min-height: 25px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.2em;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.OpenHamburgerMenu{
+    background-color: bisque;
+    color: rgb(57, 122, 243);
+    border: 1px solid rgb(57, 122, 243);
+    transition: ease-out 0.2s;
+}
+
+.OpenHamburgerMenu:Hover{
+    background-color: rgb(57, 122, 243);
+    color: bisque;
+}
+
+.CloseHamburgerMenu{
+    background-color: rgb(57, 122, 243);
+    color: bisque;
+    border: 1px solid rgb(57, 122, 243);
+    transition: ease-out 0.2s;
+}
+
+.CloseHamburgerMenu:hover{
+    background-color: bisque;
+    color:rgb(57, 122, 243);
+}

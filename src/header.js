@@ -8,12 +8,10 @@ let header = () => {
     //hamburger menu
     let HamburgerMenu = CreateDivFunc('div', 'HamburgerMenu', 'HamburgerMenu');
 
-    let OpenHamburgerMenu = CreateDivFunc('div', 'OpenHamburgerMenu','OpenHamburgerMenu');
-
-    let CloseHamburgerMenu = CreateDivFunc('div', 'CloseHamburgerMenu','CloseHamburgerMenu');
+    let OpenHamburgerMenu = CreateDivFunc('button', 'OpenHamburgerMenu,HamburgerMenuIcon','OpenHamburgerMenu');
+    OpenHamburgerMenu.textContent = 'Open Menu';
 
     HamburgerMenu.append(OpenHamburgerMenu);
-    HamburgerMenu.append(CloseHamburgerMenu);
 
     //TO-DONameList
     let ToDoLogo = CreateDivFunc('div','ToDoLogo','ToDoLogo');
