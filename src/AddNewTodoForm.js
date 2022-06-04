@@ -45,7 +45,14 @@ let newform = () =>{
 
 
     //priority
-    
+    let priority = CreateDivFunc('select', 'selectWrapper', 'selectWrapper')
+    for (let i = 1; i <= 3; i++) {
+        let priorityList = [null,'Low', 'Medium', 'High']
+        let option = CreateDivFunc('option', `priorityOption${i}`,`priorityOption${i}`)
+        option.value = i
+        option.textContent = priorityList[i];
+        priority.options.add(option)
+    }
 
 
 
@@ -53,7 +60,8 @@ let newform = () =>{
     FormWrapper.append(NewTitle);
     FormWrapper.append(NewDescription); 
     // FormWrapper.append(duedateLabel);
-    FormWrapper.append(Newduedate);     
+    FormWrapper.append(Newduedate);   
+    FormWrapper.append(priority);  
     
     formMainDiv.append(formHeader);
     formMainDiv.append(formCloseButton);
