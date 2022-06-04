@@ -1,9 +1,11 @@
 import header from './header';
-import ViewController from './ViewController'
+import footer from './CreateTodoFooterBtn';
+import ViewController from './ViewController';
 
 let content = document.getElementById('content');
 
 content.append(header());
+content.append(footer());
 
 let viewController = new ViewController();
 

@@ -23,14 +23,15 @@ let header = () => {
     ProjectName.textContent = 'Default Project';
 
     //New Task
-    let NewTask = CreateDivFunc('div','NewTask','NewTask');
-    NewTask.textContent = 'New Task';
+    // let NewTask = CreateDivFunc('div','NewTask','NewTask');
+    // NewTask.textContent = 'New Task';
 
 
     headerDiv.append(HamburgerMenu);
-    headerDiv.append(ToDoLogo);
     headerDiv.append(ProjectName);
-    headerDiv.append(NewTask);
+    headerDiv.append(ToDoLogo);
+
+    // headerDiv.append(NewTask);
 
 
     return headerDiv;
