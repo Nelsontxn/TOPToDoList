@@ -2,7 +2,7 @@ import CreateDivFunc from './createdivfunction';
 
 let newform = () =>{
     //Main Form Page
-    let formMainDiv = CreateDivFunc('div', 'formMainDiv,VisibilityHidden', 'formMainDiv');
+    let formMainDiv = CreateDivFunc('div', 'formMainDiv', 'formMainDiv');
 
     //Header
     let formHeader = CreateDivFunc('div', 'formHeader', 'formHeader');
@@ -27,11 +27,38 @@ let newform = () =>{
     NewDescription.placeholder = 'Description';
 
     //dueDate
+    // let duedateLabel = CreateDivFunc('label', 'duedateLabel,formItem', 'duedateLabel');
+    // duedateLabel.for = 'DueDate';
+
+    let Newduedate = CreateDivFunc('input', 'Newduedate', 'Newduedate');
+    Newduedate.type = 'date';
+    Newduedate.name = 'duedate';
+
+    let today = new Date();
+    let year = today.getFullYear()
+    let month = today.getMonth() + 1
+    let day = today.getDate()
+
+    month.toString().length == 1 ? month = `0${month}` : month=month;
+    day.toString().length == 1 ? day = `0${day}` : day=day
+    Newduedate.defaultValue = `${year}-${month}-${day}`
 
 
     //priority
+    
 
 
+
+    //Append to the DOM
+    FormWrapper.append(NewTitle);
+    FormWrapper.append(NewDescription); 
+    // FormWrapper.append(duedateLabel);
+    FormWrapper.append(Newduedate);     
+    
+    formMainDiv.append(formHeader);
+    formMainDiv.append(formCloseButton);
+    formMainDiv.append(FormWrapper);
+    return formMainDiv;
 }
 
 export default newform;
