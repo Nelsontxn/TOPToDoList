@@ -19,8 +19,11 @@ HamburgerMenuEvent.addEventListener("click", () =>{
 
 let AddNewForm = document.getElementById('addNewBook');
 
-AddNewForm.addEventListener("click", () =>{
+AddNewForm.addEventListener("click", (e) =>{
     viewController.SwitchNewForm();
+    if (viewController.toggleNewForm == true) {
+        e.stopPropagation();
+      }
 });
 
 
@@ -29,11 +32,9 @@ document.addEventListener("click", (e) => {
     // Check if the filter list parent element exist
     const popupQuerySelector = document.getElementById('formMainDiv');
     const isClosest = popupQuerySelector.contains(e.target);
-    console.log(isClosest);
-    console.log(viewController.toggleNewForm);
     // If `isClosest` equals falsy & popup has the class `show`
     // then hide the popup
     if (!isClosest && viewController.toggleNewForm == true) {
-        // viewController.SwitchNewForm();
+        viewController.SwitchNewForm();
     }
   });
