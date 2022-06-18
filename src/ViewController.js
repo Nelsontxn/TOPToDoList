@@ -1,6 +1,7 @@
 export default class ViewController{
     constructor() {
         this.HamburgermenuOpen = false;
+        this.toggleNewForm = false;
     }
 
     //HamburgermenuController
@@ -22,4 +23,24 @@ export default class ViewController{
 
     }
 
+    //NewTODOFunctions
+
+    openNewForm() {
+        document.getElementById("formMainDiv").style.display = "block";
+      }
+
+
+    closeNewForm() {
+        document.getElementById("formMainDiv").style.display = "none";
+      }
+
+    SwitchNewForm(){
+        if(this.toggleNewForm == false){
+            this.openNewForm();
+            this.toggleNewForm = true;
+        }else{
+            this.closeNewForm();
+            this.toggleNewForm = false;
+        }
+    }
 }

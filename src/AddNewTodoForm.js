@@ -3,6 +3,7 @@ import CreateDivFunc from './createdivfunction';
 let newform = () =>{
     //Main Form Page
     let formMainDiv = CreateDivFunc('div', 'formMainDiv', 'formMainDiv');
+    formMainDiv.style.display = "none";
 
     //Header
     let formHeader = CreateDivFunc('div', 'formHeader', 'formHeader');
@@ -54,18 +55,35 @@ let newform = () =>{
         priority.options.add(option)
     }
 
+    //Clear and Submit Btn
+    //Container for the Btns
+    let FormActionBtns = CreateDivFunc('div', 'FormActionBtns', 'FormActionBtns');
+
+    //Clear Btn
+    let clearBtn = CreateDivFunc('button', 'actionButts,clearBtn', 'clearBtn');
+    clearBtn.textContent = 'Clear';
 
 
-    //Append to the DOM
+    //Submit Btn
+    let SubmitBtn = CreateDivFunc('button', 'actionButts,SubmitBtn', 'SubmitBtn');
+    SubmitBtn.textContent = 'Submit';
+
+
+
+    //Append FormWrapper to the DOM
     FormWrapper.append(NewTitle);
     FormWrapper.append(NewDescription); 
-    // FormWrapper.append(duedateLabel);
     FormWrapper.append(Newduedate);   
     FormWrapper.append(priority);  
     
+    //Append ActionBtns to the Dom
+    FormActionBtns.append(clearBtn);
+    FormActionBtns.append(SubmitBtn);
+
     formMainDiv.append(formHeader);
     formMainDiv.append(formCloseButton);
     formMainDiv.append(FormWrapper);
+    formMainDiv.append(FormActionBtns);
     return formMainDiv;
 }
 
