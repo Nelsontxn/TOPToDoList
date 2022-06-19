@@ -2,6 +2,7 @@ import header from './header';
 import footer from './CreateTodoFooterBtn';
 import ViewController from './ViewController';
 import newform from './AddNewTodoForm';
+import FormController from './FormController';
 
 let content = document.getElementById('content');
 
@@ -9,7 +10,8 @@ content.append(header());
 content.append(newform());
 content.append(footer());
 
-let viewController = new ViewController();
+const viewController = new ViewController();
+const formController = new FormController();
 
 let HamburgerMenuEvent = document.getElementById('OpenHamburgerMenu');
 
@@ -26,6 +28,16 @@ AddNewForm.addEventListener("click", (e) =>{
       }
 });
 
+//Popup Form Clear Btn
+document.getElementById('clearBtn').addEventListener("click", () =>{
+    formController.ResetForm();
+});
+
+//Popup Close X btn
+document.getElementById('formCloseBotton').addEventListener("click", () =>{
+    formController.ResetForm();
+    viewController.SwitchNewForm();
+});
 
 // When the user clicks anywhere outside of the modal, close it
 document.addEventListener("click", (e) => {
@@ -36,5 +48,6 @@ document.addEventListener("click", (e) => {
     // then hide the popup
     if (!isClosest && viewController.toggleNewForm == true) {
         viewController.SwitchNewForm();
+        formController.ResetForm();
     }
   });
