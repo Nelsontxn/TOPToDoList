@@ -4,11 +4,6 @@ export default class FormController{
         this.year = this.today.getFullYear();
         this.month = this.today.getMonth() + 1;
         this.day = this.today.getDate();
-
-        this.Title;
-        this.Description;
-        this.DueDate;
-        this.PriorityValue;
     }
     
 
@@ -22,11 +17,5 @@ export default class FormController{
         
     }
 
-    SubmitForm(){
-        this.Title = document.getElementById('Newtitle').value;
-        this.Description = document.getElementById('NewDescription').value;
-        this.DueDate = document.getElementById('Newduedate').value;
-        this.PriorityValue = document.getElementById('selectWrapper').value = 1;
 
-    }
 }

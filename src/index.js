@@ -3,6 +3,7 @@ import footer from './CreateTodoFooterBtn';
 import ViewController from './ViewController';
 import newform from './AddNewTodoForm';
 import FormController from './FormController';
+import DataController from './DataController';
 
 let content = document.getElementById('content');
 
@@ -12,6 +13,9 @@ content.append(footer());
 
 const viewController = new ViewController();
 const formController = new FormController();
+const dataController = new DataController();
+
+dataController.LoadLocalStorage();
 
 let HamburgerMenuEvent = document.getElementById('OpenHamburgerMenu');
 
@@ -35,6 +39,13 @@ document.getElementById('clearBtn').addEventListener("click", () =>{
 
 //Popup Close X btn
 document.getElementById('formCloseBotton').addEventListener("click", () =>{
+    formController.ResetForm();
+    viewController.SwitchNewForm();
+});
+
+//Popup Submit Btn
+document.getElementById('SubmitBtn').addEventListener("click", () =>{
+    dataController.SubmitForm();
     formController.ResetForm();
     viewController.SwitchNewForm();
 });
