@@ -14,7 +14,7 @@ export default class DataController{
         console.log("Loaded LocalStorage")
     };
 
-    console.log(this.Todo);
+    // console.log(this.Todo);
 
     }
     //Function to submit the data
@@ -40,5 +40,6 @@ export default class DataController{
         console.log(this.Todo);
         localStorage.setItem("Todo", JSON.stringify(this.Todo));
     }
+
 
 };

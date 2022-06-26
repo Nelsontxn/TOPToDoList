@@ -1,4 +1,5 @@
 import header from './header';
+import hero from './hero';
 import footer from './CreateTodoFooterBtn';
 import ViewController from './ViewController';
 import newform from './AddNewTodoForm';
@@ -8,6 +9,7 @@ import DataController from './DataController';
 let content = document.getElementById('content');
 
 content.append(header());
+content.append(hero());
 content.append(newform());
 content.append(footer());
 
@@ -16,6 +18,14 @@ const formController = new FormController();
 const dataController = new DataController();
 
 dataController.LoadLocalStorage();
+
+let herodivcontainer = document.getElementById('herodiv');
+
+dataController.Todo.forEach(element => {
+    let TodoListItem = viewController.LoadTodoList(element)
+    console.log(TodoListItem);
+    herodivcontainer.append(TodoListItem);
+});
 
 let HamburgerMenuEvent = document.getElementById('OpenHamburgerMenu');
 
