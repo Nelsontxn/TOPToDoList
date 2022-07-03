@@ -21,8 +21,10 @@ dataController.LoadLocalStorage();
 
 let herodivcontainer = document.getElementById('herodiv');
 
+
+
 dataController.Todo.forEach(element => {
-    let TodoListItem = viewController.LoadTodoList(element)
+    let TodoListItem = viewController.LoadTodoList(element);
     console.log(TodoListItem);
     herodivcontainer.append(TodoListItem);
 });
@@ -55,8 +57,10 @@ document.getElementById('formCloseBotton').addEventListener("click", () =>{
 
 //Popup Submit Btn
 document.getElementById('SubmitBtn').addEventListener("click", () =>{
-    dataController.SubmitForm();
+    let newData = dataController.SubmitForm();
     formController.ResetForm();
+    let NewTodoItem = viewController.LoadTodoList(newData);
+    herodivcontainer.append(NewTodoItem);
     viewController.SwitchNewForm();
 });
 

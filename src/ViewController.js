@@ -54,25 +54,26 @@ export default class ViewController{
     // 4. Append the Div to the hero
     TodoPriorityEnumeration(todo){
         let priority;
-        switch(todo.PriorityValue){
-            case 1:
+        switch(todo){
+            case '1':
                 priority = "Low";
                 break;
-            case 2:
+            case '2':
                 priority = "Medium";
                 break;
-            case 3:
+            case '3':
                 priority = "High";
                 break;
         }
+        console.log(priority);
         return priority;
     }
 
     LoadTodoList(todo){
-        let todoItem = CreateDivFunc('div', 'todoItem',  `${todo.ID}`);
+        let todoItem = CreateDivFunc('div', 'todoItem,todoItemContent',  `${todo.ID}`);
 
-        let priority = this.TodoPriorityEnumeration(todo);
-        let todoPriority = CreateDivFunc('div', `todoPriority-${priority}`,  `todoPriority`);
+        let priority = this.TodoPriorityEnumeration(todo.PriorityValue);
+        let todoPriority = CreateDivFunc('div', `todoPriority,todoPriorityContent,todoPriority-${priority}`,  `todoPriority`);
         todoPriority.textContent = priority;
 
         let todoTitle = CreateDivFunc('div','todoTitle', 'todoTitle');
@@ -84,6 +85,9 @@ export default class ViewController{
         let todoDueDate = CreateDivFunc('div','todoDueDate', 'todoDueDate');
         todoDueDate.textContent = todo.DueDate;
 
+        // let DeleteBtn = CreateDivFunc('div', 'trashcan', 'trashcan');
+
+
         todoItem.append(todoPriority);
         todoItem.append(todoTitle);
         todoItem.append(todoDescription);
@@ -91,4 +95,6 @@ export default class ViewController{
 
         return todoItem;
     }
+
+
 }

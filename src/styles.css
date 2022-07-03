@@ -1,7 +1,13 @@
 body{
     margin: 0;
 }
-
+:root{
+    --black-color: #000000;
+    --success-green-color: #52f321;
+    --alternate-font-color: #FFFFFF;
+    --red-warning-color: #FC2F2F;
+    --hambugermenu-color: rgb(57, 122, 243);
+}
 
 .content{
     height: 100vh;
@@ -37,20 +43,20 @@ body{
 }
 .OpenHamburgerMenu{
     background-color: bisque;
-    color: rgb(57, 122, 243);
-    border: 1px solid rgb(57, 122, 243);
+    color: var(--hambugermenu-color);
+    border: 1px solid var(--hambugermenu-color);
     transition: ease-out 0.2s;
 }
 
 .OpenHamburgerMenu:Hover{
-    background-color: rgb(57, 122, 243);
+    background-color: var(--hambugermenu-color);
     color: bisque;
 }
 
 .CloseHamburgerMenu{
-    background-color: rgb(57, 122, 243);
+    background-color: var(--hambugermenu-color);
     color: bisque;
-    border: 1px solid rgb(57, 122, 243);
+    border: 1px solid var(--hambugermenu-color);
     transition: ease-out 0.2s;
 }
 
@@ -70,8 +76,8 @@ body{
     right: 20px;
     z-index: 1000;
     outline: transparent;
-    background: linear-gradient(135deg, #52f321 0%, #45c015 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--success-green-color) 0%, var(--success-green-color) 100%);
+    color: var(--alternate-font-color);
     font-size:2em;
     text-align: center;
     justify-items: center;
@@ -146,23 +152,83 @@ body{
 }
 
 .clearBtn{
-    background-color: rgb(252, 47, 47);
-    border: 2px solid #000;
+    background-color: var(--red-warning-color);
+    border: 2px solid var(--black-color);
 }
 
 .SubmitBtn{
-    background-color: #52f321;
-    border: 2px solid #FFFFFF;
-    color: white;
+    background-color: var(--success-green-color);
+    border: 2px solid var(--alternate-font-color);
+    color: var(--alternate-font-color);
 }
 
 .SubmitBtn:hover{
     cursor: pointer;
-    border: 2px solid black;
-    color: black;
+    border: 2px solid var(--black-color);
+    color: var(--black-color);
 }
 .clearBtn:hover{
     cursor: pointer;
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF; 
+    border: 2px solid var(--alternate-font-color);
+    color: var(--alternate-font-color); 
+}
+
+.herodiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todoItem{
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr 1fr;
+    align-items: center;
+    text-align: center;
+    height: max-content;
+    padding: 0 0.5rem 0 0.5rem;
+    max-width: 1258px;
+    margin: 0.1rem 0 0.1rem 0;
+
+}
+
+.todoItemContent{
+    border: var(--black-color) solid 2px;
+    border-radius: 1rem;
+}
+
+.todoPriority{
+    border-radius: 1rem;
+    margin: 0.2rem;
+    border: 2px solid ;
+    padding: 0.2rem;
+    min-width: 80px;    
+}
+.todoPriorityHeader{
+    margin: 0.2rem;
+    border-color: transparent;   
+}
+
+.todoPriorityContent{
+    border-color: var(--black-color);
+}
+
+.todoPriority-Low{
+    color: var(--alternate-font-color) ;
+    background-color: var(--success-green-color);
+
+}
+
+.todoPriority-High{
+    color: var(--black-color) ;
+    background-color: var(--red-warning-color);
+
+}
+
+.todoPriority-Medium{
+    color: var(--black-color) ;
+    background-color: #EED202;
+}
+
+.todoTitle{
+    padding: 0 0.2rem 0 0.2rem;
 }

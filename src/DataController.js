@@ -31,7 +31,6 @@ export default class DataController{
         this.Todo.push(NewData);
         this.UpdateLocalStorage();
 
-        console.log(this.TodoCounter);
         return NewData;
   
     }
