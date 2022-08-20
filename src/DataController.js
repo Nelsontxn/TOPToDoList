@@ -22,6 +22,7 @@ export default class DataController{
     SubmitForm(){
         this.TodoCounter++;
         let NewData = {
+            "UUID": this.TodoCounter + document.getElementById('Newduedate').value,
             "ID": this.TodoCounter,
             "title": document.getElementById('Newtitle').value,
             "Description": document.getElementById('NewDescription').value,

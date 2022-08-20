@@ -70,7 +70,7 @@ export default class ViewController{
     }
 
     LoadTodoList(todo){
-        let todoItem = CreateDivFunc('div', 'todoItem,todoItemContent',  `${todo.ID}`);
+        let todoItem = CreateDivFunc('div', 'todoItem,todoItemContent',  `${todo.UUID}`);
 
         let priority = this.TodoPriorityEnumeration(todo.PriorityValue);
         let todoPriority = CreateDivFunc('div', `todoPriority,todoPriorityContent,todoPriority-${priority}`,  `todoPriority`);
@@ -85,13 +85,15 @@ export default class ViewController{
         let todoDueDate = CreateDivFunc('div','todoDueDate', 'todoDueDate');
         todoDueDate.textContent = todo.DueDate;
 
-        // let DeleteBtn = CreateDivFunc('div', 'trashcan', 'trashcan');
-
+        let todoDeleteBtn = CreateDivFunc('div', 'DeleteBtn', 'DeleteBtn');
+        let deletelogo = CreateDivFunc('div','trashcan', 'trashcan' );
+        todoDeleteBtn.append(deletelogo);
 
         todoItem.append(todoPriority);
         todoItem.append(todoTitle);
         todoItem.append(todoDescription);
         todoItem.append(todoDueDate);
+        todoItem.append(todoDeleteBtn);
 
         return todoItem;
     }

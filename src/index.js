@@ -25,7 +25,6 @@ let herodivcontainer = document.getElementById('herodiv');
 
 dataController.Todo.forEach(element => {
     let TodoListItem = viewController.LoadTodoList(element);
-    console.log(TodoListItem);
     herodivcontainer.append(TodoListItem);
 });
 
@@ -75,4 +74,23 @@ document.addEventListener("click", (e) => {
         viewController.SwitchNewForm();
         formController.ResetForm();
     }
-  });
+  }
+);
+
+document.getElementById('DeleteBtn').addEventListener("click", () =>{
+    let deletingElement = document.getElementById('DeleteBtn');
+    let parent = deletingElement.parentNode;
+    console.log(parent.id);
+    let wholeList = JSON.parse(window.localStorage.getItem('Todo'));
+    let newList = []
+    wholeList.forEach(element => {
+        if (element.UUID != parent.id){
+            newList.push(element);
+        };
+    });
+    window.localStorage.removeItem('Todo');
+    window.localStorage.setItem("Todo", JSON.stringify(newList));
+    document.getElementById(parent.id).remove();
+}
+);
+

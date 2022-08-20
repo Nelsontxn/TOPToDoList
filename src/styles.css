@@ -181,7 +181,7 @@ body{
 
 .todoItem{
     display: grid;
-    grid-template-columns: 1fr 1fr 10fr 1fr;
+    grid-template-columns: 1fr 1fr 10fr 1fr 0.5fr;
     align-items: center;
     text-align: center;
     height: max-content;
@@ -231,4 +231,34 @@ body{
 
 .todoTitle{
     padding: 0 0.2rem 0 0.2rem;
+}
+
+
+.DeleteBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+}
+.trashcan{
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    text-indent: -9999px;
+    width: 15px;
+    height: 15px;
+    background: url(./assets/trash-can-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+.trashcan:hover{
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    text-indent: -9999px;
+    width: 15px;
+    height: 15px;
+    background: url(./assets/trash-can-solid-red.svg);
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
 }
